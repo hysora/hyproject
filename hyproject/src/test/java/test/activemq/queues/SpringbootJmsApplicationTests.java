@@ -11,12 +11,11 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.study.Application;
 import com.study.activemq.queues.Producer;
-import com.study.web.config.DaoConfiguration;
-
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = DaoConfiguration.class)
+@SpringBootTest(classes = Application.class)
 @EnableAsync // 开启异步任务支持
 @EnableJms
 public class SpringbootJmsApplicationTests {
