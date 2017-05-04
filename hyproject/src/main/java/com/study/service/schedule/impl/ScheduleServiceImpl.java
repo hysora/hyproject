@@ -13,10 +13,10 @@ import com.study.service.schedule.ScheduleService;
 @Component
 public class ScheduleServiceImpl implements ScheduleService {
 
-	@Scheduled(fixedRate = 5000)
+	@Scheduled(fixedRate = 5000000)
 	@Override
 	public void test() {
-		System.out.println("成功了");
+		System.out.println("我还活着~");
 	}
 	
 }

@@ -1,9 +1,14 @@
 package com.study.web.action;
 
+import javax.jms.Destination;
+
+import org.apache.activemq.command.ActiveMQQueue;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.study.activemq.queues.Producer;
 
 /**
  * 学习springboot 2017年5月2日
@@ -12,11 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/study/")
-@EnableAutoConfiguration
 public class SpringBootAction {
+	
+	@Autowired
+	private Producer producer;
 	
 	@RequestMapping("home")
 	public String home() {
+		Destination destination = new ActiveMQQueue("FirstQueue1");
+		producer.sendMessage(destination, "activeMQ调试");
 		return "成功";
 	}
 	
