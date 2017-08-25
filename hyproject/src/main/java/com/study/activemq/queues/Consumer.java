@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Consumer {
-	
+
 	/**
 	 * @Async 代表异步
 	 * @param text
